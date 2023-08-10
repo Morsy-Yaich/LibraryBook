@@ -9,13 +9,20 @@ namespace LibraryBook.Models
         public int IdLivre { get; set; }
         public string? Titre { get; set; }
         public int AnnéePub { get; set; }
-        public string? IdAuteur { get; set; }
-        [ForeignKey("IdAuteur")]
+        public int IdAut { get; set; }
+        public Auteur Auteur { get; set; }
         public int IdTheme { get; set; }
-        [ForeignKey("IdTheme")]
+        public Theme Theme { get; set; }  
         public string? FilePath { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString ="{0:yyyy-MM-dd}",ApplyFormatInEditMode =true)]
         public  DateTime CreatedAt { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime UpdatedAt { get; set; }
+        public ICollection<Section> Sections { get; } = new List<Section>();
 
     }
 }

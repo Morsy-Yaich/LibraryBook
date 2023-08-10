@@ -15,7 +15,7 @@ namespace LibraryBook.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View("~/Home/Privacy.cshtml");
         }
 
         public IActionResult Privacy()

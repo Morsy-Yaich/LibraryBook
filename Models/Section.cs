@@ -6,11 +6,11 @@ namespace LibraryBook.Models
     public class Section
     {
         [Key]
-        public string? IdSection { get; set; }
-        public  string? IdLivre { get; set; }
-        [ForeignKey("IdLivre")]
-        public string? Titre { get; set; }
-        public string? RowContent { get; set; }
-        public string? FilePath { get; set; }
+        public int IdSection { get; set; }
+        public int IdLivre { get; set; }
+        public Livre Livre { get; set; }
+        public string Titre { get; set; }
+        public string RowContent { get; set; }
+        public string FilePath { get; set; }
     }
 }
