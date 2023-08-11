@@ -1,5 +1,7 @@
 ﻿using LibraryBook.Repository;
 using Microsoft.AspNetCore.Mvc;
+using LibraryBook.Models;
+
 
 namespace LibraryBook.Controllers
 {
@@ -12,6 +14,7 @@ namespace LibraryBook.Controllers
         }
         public IActionResult Index()
         {
+            Section<Theme> themes = _repositoryTheme.GetAll();
             return View();
         }
     }

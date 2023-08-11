@@ -1,5 +1,6 @@
 ﻿using LibraryBook.Repository;
 using Microsoft.AspNetCore.Mvc;
+using LibraryBook.Models;
 
 namespace LibraryBook.Controllers
 {
@@ -12,7 +13,8 @@ namespace LibraryBook.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            List<Section> sections = _repositorySection.GetAll();
+            return View(sections);
         }
     }
 }
